@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Watch | Contacto</title>
+    <link rel="stylesheet" th:href="@{/css/site.css}">
+</head>
+<body>
+<header class="header">
+    <a class="brand" href="/">🌎 <span>Climate Watch</span></a>
+    <nav>
+        <a class="active" href="/">Inicio</a>
+        <a href="/clima">Clima</a>
+        <a href="/pronostico">Pronóstico</a>
+        <a href="/novedades">Novedades</a>
+        <a href="/contacto">Contacto</a>
+     
+    </nav>
+</header>
+<main class="page">
+    <section class="page-title">
+        <h1>Contáctanos</h1>
+        <p>Envíanos tus comentarios o sugerencias sobre el proyecto.</p></section>
+    <form class="contact-form">
+        <label>Nombre<input type="text" placeholder="Tu nombre"></label>
+        <label>Correo electrónico<input type="email" placeholder="correo@ejemplo.com"></label>
+        <label>Mensaje<textarea rows="6" placeholder="Escribe tu mensaje..."></textarea></label>
+        <button type="button" onclick="alert('Formulario de demostración')">Enviar mensaje</button>
+    </form>
+</main>
+</body>
+</html>

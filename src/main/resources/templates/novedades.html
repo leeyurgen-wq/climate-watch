@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Watch | Novedades</title>
+    <link rel="stylesheet" th:href="@{/css/site.css}">
+</head>
+<body>
+
+<header class="header">
+    <a class="brand" href="/">🌎 <span>Climate Watch</span></a>
+    <nav>
+        <a class="active" href="/">Inicio</a>
+        <a href="/clima">Clima</a>
+        <a href="/pronostico">Pronóstico</a>
+        <a href="/novedades">Novedades</a>
+        <a href="/contacto">Contacto</a>
+     
+    </nav>
+</header>
+
+<main class="page">
+    <section class="page-title">
+        <h1>Novedades Climáticas</h1>
+
+        <p>Consulta las ultimas novedades climaticas </p>
+
+    </section>
+    <section class="news-grid">
+        <article class="news-card" th:each="novedad : ${novedades}">
+            <img th:src="${novedad.imagen}" th:alt="${novedad.titulo}">
+            <div class="news-content">
+                <span class="tag" th:text="${novedad.tipo}">Alerta</span>
+                <h2 th:text="${novedad.titulo}">Título</h2>
+                <p th:text="${novedad.descripcion}">Descripción</p>
+               
+            </div>
+        </article>
+    </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,319 @@
+
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        min-height: 100vh;
+
+        /* AZUL MARINO */
+        background:#0B2A30;
+
+        padding: 40px 20px;
+    }
+
+    .contenedor {
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+    }
+
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+.brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.header nav a:hover,
+.header nav a.active {
+    color: #fff;
+}
+.presentacion { 
+    margin-top: 60px;
+    text-align: center;
+    color: white;
+}
+
+
+    /* =========================
+       TARJETA PRINCIPAL
+       ========================= */
+
+    .tarjeta {
+        background: #ffffff;
+        margin-top: 70px;
+        border-radius: 24px;
+
+        padding: 35px;
+
+        box-shadow:
+            0 20px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    /* =========================
+       FORMULARIO
+       ========================= */
+
+    .formulario {
+        display: flex;
+
+        gap: 12px;
+
+        margin-bottom: 30px;
+    }
+
+    .formulario input {
+        flex: 1;
+
+        padding: 16px 18px;
+
+        border: 2px solid #cbdce8;
+
+        border-radius: 12px;
+
+        background: #f8fbfd;
+
+        color: #061a33;
+
+        font-size: 16px;
+
+        outline: none;
+
+        transition: 0.3s;
+    }
+
+    .formulario input:focus {
+        border-color: #164b70;
+
+        box-shadow:
+            0 0 0 3px rgba(22, 75, 112, 0.15);
+    }
+
+    .formulario input::placeholder {
+        color: #8296a5;
+    }
+
+    .formulario button {
+        padding: 16px 28px;
+
+        border: none;
+
+        border-radius: 12px;
+
+        background: #061a33;
+
+        color: white;
+
+        font-size: 16px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+    }
+
+    .formulario button:hover {
+        background: green;
+
+        transform: translateY(-2px);
+    }
+
+    /* =========================
+       ERROR
+       ========================= */
+
+    .error {
+        background: #fff1f1;
+
+        color: #a83232;
+
+        padding: 15px;
+
+        border-radius: 12px;
+
+        text-align: center;
+
+        margin-bottom: 25px;
+
+        border: 1px solid #edc5c5;
+    }
+
+    /* =========================
+       RESULTADO
+       ========================= */
+
+    .resultado {
+        text-align: center;
+    }
+
+    .ubicacion h2 {
+        font-size: 34px;
+
+        color: #061a33;
+
+        margin-bottom: 5px;
+    }
+
+    .ubicacion p {
+        color: #657b8c;
+
+        font-size: 16px;
+    }
+
+    /* =========================
+       ICONO
+       ========================= */
+
+    .icono {
+        width: 120px;
+
+        height: 120px;
+
+        margin: 10px auto;
+    }
+
+    /* =========================
+       TEMPERATURA
+       ========================= */
+
+    .temperatura {
+        font-size: 60px;
+
+        font-weight: bold;
+
+        color: #0b2d4d;
+
+        margin-top: 5px;
+    }
+
+    .descripcion {
+        font-size: 21px;
+
+        color: #536b7b;
+
+        text-transform: capitalize;
+
+        margin-top: 5px;
+
+        margin-bottom: 30px;
+    }
+
+    /* =========================
+       DATOS DEL CLIMA
+       ========================= */
+
+    .datos {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 15px;
+
+        margin-top: 20px;
+    }
+
+    .dato {
+        background: #f3f7fa;
+
+        border-radius: 16px;
+
+        padding: 20px;
+
+        border: 1px solid #d7e3eb;
+
+        transition: 0.3s;
+    }
+
+    .dato:hover {
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 8px 20px rgba(6, 26, 51, 0.12);
+    }
+
+    .dato h3 {
+        color: #607787;
+
+        font-size: 15px;
+
+        margin-bottom: 10px;
+    }
+
+    .dato p {
+        color: #061a33;
+
+        font-size: 22px;
+
+        font-weight: bold;
+    }
+
+    /* =========================
+       PIE
+       ========================= */
+
+    .pie {
+        text-align: center;
+
+        color: #c9e5f5;
+
+        font-size: 13px;
+
+        margin-top: 25px;
+    }
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
+
+    @media (max-width: 700px) {
+
+        .formulario {
+            flex-direction: column;
+        }
+
+        .formulario button {
+            width: 100%;
+        }
+
+        .datos {
+            grid-template-columns: 1fr;
+        }
+
+        .encabezado h1 {
+            font-size: 32px;
+        }
+
+        .temperatura {
+            font-size: 48px;
+        }
+    }
+

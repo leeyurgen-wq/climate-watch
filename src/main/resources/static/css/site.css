@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background:#0B2A30;
+    color: #243b53;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+.brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.header nav a:hover,
+.header nav a.active {
+    color: #fff;
+}
+
+.topbar {
+    background: #16697a;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.topbar nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 15px;
+}
+
+.topbar nav a:hover,
+.topbar nav a.active {
+    color: #b8f2e6;
+}
+
+.page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 55px 25px 80px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.page-title span {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.page-title h1 {
+    font-size: 44px;
+    color: #fff;
+    margin: 12px 0;
+}
+
+.page-title p {
+    color: #fff;
+    font-size: 18px;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.weather-card,
+.info-box,
+.contact-form,
+.news-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(25, 80, 90, 0.1);
+}
+
+.weather-card {
+    text-align: center;
+    padding: 35px;
+}
+
+.weather-icon {
+    font-size: 48px;
+}
+
+.weather-card h2 {
+    font-size: 38px;
+    color: #16697a;
+    margin: 12px 0 5px;
+}
+
+.weather-card p {
+    color: #78909c;
+}
+
+.info-box {
+    margin-top: 28px;
+    padding: 30px;
+}
+
+.info-box h2 {
+    color: #16697a;
+    margin-bottom: 10px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+}
+
+.news-card {
+    overflow: hidden;
+}
+
+.news-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 23px;
+}
+
+.tag {
+    display: inline-block;
+    background: #3fa34d;
+    color: #fff;
+    border-radius: 20px;
+    padding: 5px 11px;
+    font-size: 12px;
+    margin-bottom: 13px;
+}
+
+.news-content h2 {
+    color: #16697a;
+    margin-bottom: 10px;
+}
+
+.news-content p {
+    color: #607887;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.news-content small {
+    color: #8a9aa5;
+}
+
+.contact-form {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    display: grid;
+    gap: 20px;
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: #16697a;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-top: 8px;
+    padding: 13px;
+    border: 1px solid #d2e2e4;
+    border-radius: 10px;
+    font: inherit;
+}
+
+.contact-form button {
+    border: 0;
+    border-radius: 25px;
+    background: #3fa34d;
+    color: #fff;
+    padding: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #2d7d3a;
+}
+
+@media (max-width: 750px) {
+    .topbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .topbar nav a {
+        margin: 0 6px;
+    }
+
+    .weather-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title h1 {
+        font-size: 34px;
+    }
+}

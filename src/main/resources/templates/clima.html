@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" th:href="@{/css/clima.css}">
+
+    <title>Consulta del Clima</title>
+
+</head>
+
+
+<body>
+
+<div class="contenedor">
+
+
+    <!-- =========================
+         ENCABEZADO
+         ========================= -->
+
+   <header class="header">
+    <a class="brand" href="/">🌎 <span>Climate Watch</span></a>
+
+    
+
+    <nav>
+        <a class="active" href="/">Inicio</a>
+        <a href="/clima">Clima</a>
+        <a href="/pronostico">Pronóstico</a>
+        <a href="/novedades">Novedades</a>
+        <a href="/contacto">Contacto</a>
+     
+    </nav>
+</header>
+
+<div class="presentacion">
+    <h1> Como Estara Tu Dia Hoy,Aqui Te Lo Contamos</h1>
+<br>
+    <P>Consulta El Estado Del Clima De Cualquier Ciudad</P>
+
+</div>
+
+
+
+    <!-- =========================
+         TARJETA
+         ========================= -->
+
+    <main class="tarjeta">
+
+
+        <!-- =========================
+             FORMULARIO
+             ========================= -->
+
+        <form
+                class="formulario"
+                action="/clima/buscar"
+                method="get">
+
+            <input
+                    type="text"
+                    name="ciudad"
+                    placeholder="Escribe una ciudad. Ej: Bogotá"
+                    autocomplete="off"
+                    required
+            >
+
+            <button type="submit">
+                🔍 Consultar
+            </button>
+
+        </form>
+
+
+        <!-- =========================
+             MENSAJE DE ERROR
+             ========================= -->
+
+        <div
+                class="error"
+                th:if="${error}"
+                th:text="${error}">
+
+            No se pudo consultar el clima.
+
+        </div>
+
+
+        <!-- =========================
+             RESULTADO DEL CLIMA
+             ========================= -->
+
+        <section
+                class="resultado"
+                th:if="${clima}">
+
+
+            <!-- CIUDAD Y PAÍS -->
+
+            <div class="ubicacion">
+
+                <h2 th:text="${clima.ciudad}">
+                    Bogotá
+                </h2>
+
+                <p th:text="${clima.pais}">
+                    CO
+                </p>
+
+            </div>
+
+
+            <!-- ICONO DEL CLIMA -->
+
+            <img
+                    class="icono"
+                    th:src="'https://openweathermap.org/img/wn/'
+                    + ${clima.icono}
+                    + '@2x.png'"
+                    alt="Estado del clima"
+            >
+
+
+            <!-- TEMPERATURA -->
+
+            <div
+                    class="temperatura"
+                    th:text="${#numbers.formatDecimal(clima.temperatura, 1, 1)} + ' °C'">
+
+                20.0 °C
+
+            </div>
+
+
+            <!-- DESCRIPCIÓN -->
+
+            <p
+                    class="descripcion"
+                    th:text="${clima.descripcion}">
+
+                Cielo despejado
+
+            </p>
+
+
+            <!-- =========================
+                 INFORMACIÓN
+                 ========================= -->
+
+            <div class="datos">
+
+
+                <!-- SENSACIÓN -->
+
+                <div class="dato">
+
+                    <h3>🌡️ Sensación térmica</h3>
+
+                    <p
+                            th:text="${#numbers.formatDecimal(clima.sensacion, 1, 1)} + ' °C'">
+
+                        20 °C
+
+                    </p>
+
+                </div>
+
+
+                <!-- TEMPERATURA MÍNIMA -->
+
+                <div class="dato">
+
+                    <h3>❄️ Temperatura mínima</h3>
+
+                    <p
+                            th:text="${#numbers.formatDecimal(clima.temperaturaMin, 1, 1)} + ' °C'">
+
+                        15 °C
+
+                    </p>
+
+                </div>
+
+
+                <!-- TEMPERATURA MÁXIMA -->
+
+                <div class="dato">
+
+                    <h3>☀️ Temperatura máxima</h3>
+
+                    <p
+                            th:text="${#numbers.formatDecimal(clima.temperaturaMax, 1, 1)} + ' °C'">
+
+                        25 °C
+
+                    </p>
+
+                </div>
+
+
+                <!-- HUMEDAD -->
+
+                <div class="dato">
+
+                    <h3>💧 Humedad</h3>
+
+                    <p
+                            th:text="${clima.humedad} + ' %'">
+
+                        70 %
+
+                    </p>
+
+                </div>
+
+
+                <!-- VIENTO -->
+
+                <div class="dato">
+
+                    <h3>💨 Viento</h3>
+
+                    <p
+                            th:text="${clima.viento} + ' m/s'">
+
+                        3 m/s
+
+                    </p>
+
+                </div>
+
+
+                <!-- NUBOSIDAD -->
+
+                <div class="dato">
+
+                    <h3>☁️ Nubosidad</h3>
+
+                    <p
+                            th:text="${clima.nubosidad} + ' %'">
+
+                        40 %
+
+                    </p>
+
+                </div>
+
+
+                <!-- PRESIÓN -->
+
+                <div class="dato">
+
+                    <h3>🔵 Presión atmosférica</h3>
+
+                    <p
+                            th:text="${clima.presion} + ' hPa'">
+
+                        1015 hPa
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MENSAJE INICIAL
+             ========================= -->
+
+        <div
+                class="pie"
+                th:unless="${clima}">
+
+            Escribe una ciudad para consultar su información meteorológica.
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =========================
+         PIE DE PÁGINA
+         ========================= -->
+
+    <footer class="pie">
+
+        Información meteorológica proporcionada por OpenWeather.
+
+    </footer>
+
+
+</div>
+
+</body>
+
+</html>
+

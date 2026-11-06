@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "titulo": "Alerta por lluvias intensas",
+    "descripcion": "Se esperan lluvias fuertes durante las próximas horas. Se recomienda conducir con precaución y mantenerse informado.",
+    "fecha": "22/08/2026",
+    "tipo": "Alerta",
+    "imagen": "/images/lluvia.svg"
+  },
+  {
+    "id": 2,
+    "titulo": "Temperaturas elevadas",
+    "descripcion": "Se registran temperaturas altas durante el día. Se recomienda mantenerse hidratado y evitar la exposición prolongada al sol.",
+    "fecha": "22/08/2026",
+    "tipo": "Temperatura",
+    "imagen": "/images/sol.svg"
+  },
+  {
+    "id": 3,
+    "titulo": "Fuertes vientos",
+    "descripcion": "Se prevén ráfagas de viento en algunas zonas. Asegure objetos que puedan caer y siga las recomendaciones oficiales.",
+    "fecha": "21/08/2026",
+    "tipo": "Viento",
+    "imagen": "/images/viento.svg"
+  },
+  {
+    "id": 4,
+    "titulo": "Cielo parcialmente nublado",
+    "descripcion": "Durante la jornada se esperan intervalos de nubosidad con temperaturas agradables en buena parte del territorio.",
+    "fecha": "21/08/2026",
+    "tipo": "Pronóstico",
+    "imagen": "/images/nublado.svg"
+  }
+]
